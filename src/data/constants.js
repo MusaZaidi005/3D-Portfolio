@@ -1,5 +1,3 @@
-import idwareLogo from "../images/ID-ware_Logo.svg";
-
 export const Bio = {
   name: "Musa Raza Zaidi",
   roles: [
@@ -121,7 +119,7 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
-    img: idwareLogo,
+    img: "/Companies/id_ware_logo.jpeg",
     role: "Software Engineer",
     company: "ID-WARE",
     date: "June 2024 - Present",
@@ -139,7 +137,7 @@ export const experiences = [
   },
   {
     id: 2,
-    img: "https://www.metropolitanwarehouse.com/resources/images/MWD.png",
+    img: "/Companies/metropolitanwarehousepk_logo.jpeg",
     role: "Full Stack Developer",
     company: "Metropolitan Warehouse & Delivery",
     date: "FEB 2024 – JUNE 2024",
@@ -156,7 +154,7 @@ export const experiences = [
   },
   {
     id: 3,
-    img: "https://enabling.systems/wp-content/uploads/2024/03/MicrosoftTeams-image-6-2048x404.png",
+    img: "/Companies/enabling_systems_private_limited_logo.jpeg",
     role: "REACTJS & DOTNET CORE DEVELOPER",
     company: "Enabling Systems",
     date: "JUNE 2023 – FEB 2024",
@@ -176,7 +174,7 @@ export const experiences = [
   },
   {
     id: 4,
-    img: "https://media.licdn.com/dms/image/v2/D4D0BAQEO27uJzwNBfQ/company-logo_200_200/company-logo_200_200/0/1705036390588/terminalctrl_logo?e=1750291200&v=beta&t=M-rMWOIQIdpHuDfNKGTJo3uq-sjxlvs2kHy3TqQDRSQ",
+    img: "/Companies/terminalctrl_logo.jpeg",
     role: "WEBSITE DEVELOPER",
     company: "TERMINAL-CTRL",
     date: "Feb 2022 - May 2023",
