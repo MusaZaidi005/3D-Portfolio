@@ -1,3 +1,5 @@
+import idwareLogo from "../images/ID-ware_Logo.svg";
+
 export const Bio = {
   name: "Musa Raza Zaidi",
   roles: [
@@ -43,12 +45,12 @@ export const skills = [
       {
         name: "CSS",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/css3/css3-original.svg",
       },
       {
         name: "JavaScript",
         image:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png",
+          "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/javascript/javascript-original.svg",
       },
       {
         name: "Bootstrap",
@@ -119,7 +121,7 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
-    img: "https://id-ware.com/files/cto_layout/themedesigner/uploads/ID-ware_Logo-we.svg",
+    img: idwareLogo,
     role: "Software Engineer",
     company: "ID-WARE",
     date: "June 2024 - Present",
@@ -223,13 +225,97 @@ export const education = [
 
 export const projects = [
   {
+    id: 16,
+    title: "Al Wasl Private Travel",
+    date: "2025",
+    description:
+      "A bilingual (EN/RU) website for a private chauffeur and travel service across Dubai, Abu Dhabi, Sharjah and Ajman. Covers airport transfers, city-to-city rides, tourism packages and vehicle rental, with a fleet and destinations showcase and instant WhatsApp booking.",
+    image: "/images/projects/al-wasl.webp",
+    tags: ["HTML", "CSS", "JS", "i18n"],
+    category: "Web App",
+    github: "",
+    webapp: "https://al-wasl.netlify.app/",
+  },
+  {
+    id: 17,
+    title: "TechPro Solutions",
+    date: "2025",
+    description:
+      "A corporate website for an IT services company, presenting staff augmentation, product development, cloud and digital transformation services. Includes a services and technologies explorer, a portfolio, and a quote request flow.",
+    image: "/images/projects/techpro-solutions.webp",
+    tags: ["HTML", "CSS", "JS"],
+    category: "Web App",
+    github: "",
+    webapp: "https://techpro-solution.netlify.app/",
+  },
+  {
+    id: 18,
+    title: "IT Services Provider",
+    date: "2025",
+    description:
+      "A modern, animated IT company website with pages for services, portfolio, blog and contact. Features a preloader, glassmorphism navigation, newsletter signup and a fully responsive layout for web development, cloud and cybersecurity offerings.",
+    image: "/images/projects/it-services.webp",
+    tags: ["HTML", "CSS", "JS"],
+    category: "Web App",
+    github: "",
+    webapp: "https://it-services-provider.netlify.app/",
+  },
+  {
+    id: 19,
+    title: "Virtual Office Pro",
+    date: "2025",
+    description:
+      "A website for a virtual healthcare support practice offering medical assistants, front desk specialists, insurance eligibility and verification, administrative support and telehealth assistance, with appointment booking and an articles section.",
+    image: "/images/projects/virtual-office-pro.webp",
+    tags: ["React Js", "CSS"],
+    category: "Web App",
+    github: "",
+    webapp: "https://virtual-medical-assistent.netlify.app/",
+  },
+  {
+    id: 13,
+    title: "StoreFlux",
+    date: "2026 - Present",
+    description:
+      "StoreFlux is a multi-tenant e-commerce platform that lets store owners open an online shop in minutes. It ships a ready-made storefront, an admin dashboard for products, orders and stock, payments via Stripe and PayPal, and an open API for custom storefronts. Built on a .NET 10 Clean Architecture backend with PostgreSQL, Redis and SignalR, and React 19 frontends deployed on AWS.",
+    image: "/images/projects/storeflux.webp",
+    tags: [".NET 10", "React Js", "PostgreSQL", "Redis", "SignalR", "AWS"],
+    category: "Web App",
+    github: "",
+    webapp: "https://storeflux.store",
+  },
+  {
+    id: 14,
+    title: "MediScan Pro",
+    date: "2026",
+    description:
+      "MediScan Pro is a healthcare suite that reads prescriptions with OCR, extracts medicines and dosages, and turns them into smart medication reminders. It includes a React Native mobile app, a .NET backend API and an internal React admin panel, with offline storage and push notifications.",
+    image: "/images/projects/mediscan-pro.webp",
+    tags: ["React Native", ".NET", "React Js", "TypeScript", "OCR"],
+    category: "Mobile App",
+    github: "",
+    webapp: "",
+  },
+  {
+    id: 15,
+    title: "B2B Networking Platform",
+    date: "2026",
+    description:
+      "A business-to-business network where companies register, get verified by an admin, and find each other by name, category and distance. Businesses connect through paid connection requests, chat, and open isolated collaboration portals. Built with a .NET 10 modular monolith, PostgreSQL, RabbitMQ, Flutter mobile apps and Braintree/PayPal billing.",
+    image: "/images/projects/b2b-networking.webp",
+    tags: [".NET 10", "Flutter", "PostgreSQL", "RabbitMQ", "Docker"],
+    category: "Web App",
+    github: "",
+    webapp: "",
+  },
+  {
     id: 1,
     title: "Mr.Carlift",
     date: "Dec 2024 - Feb 2025",
     description:
       "Mr.CarLift is a full-stack car rental and ride-sharing platform designed to seamlessly connect vehicle owners with users seeking affordable and reliable transportation. Built using React.js (frontend), Node.js (backend), and MySQL (database), the application streamlines the process of vehicle discovery, booking, and management while prioritizing user experience, security, and scalability.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/Upwork%20mrcarlift%20Thimbnail.png?raw=true",
+      "/images/projects/mr-carlift.webp",
     tags: ["React Js", "MySQL", "Node Js", "Express Js", "Redux"],
     category: "Web App",
     github: "https://github.com/MusaZaidi110/Mr.Carlift",
@@ -242,19 +328,16 @@ export const projects = [
     description:
       "AhdusTrachten is a modern, user-centric e-commerce platform specializing in premium leather Trachten (traditional Bavarian garments), offering a seamless digital experience for customers to explore, customize, and order bespoke leatherwear. Built with React.js (frontend) and Node.js (backend), the website bridges heritage craftsmanship with cutting-edge technology, ensuring intuitive navigation, secure transactions, and transparent process tracking.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/Upwork%20AhdusTrachten%20Thimbnail.png?raw=true",
+      "/images/projects/ahdus-trachten.webp",
     tags: [
-      "ReactJs",
+      "React Js",
       "Redux",
       "React Email",
-      "Eslint",
-      "React Js",
       "Node Js",
       "Express Js",
-      "Redux",
     ],
     category: "Web App",
-    github: "https://github.com/rishavchanda/Trackify",
+    github: "",
     webapp: "https://ahdustrachten.netlify.app/",
   },
   {
@@ -264,7 +347,7 @@ export const projects = [
     description:
       "xPal is a real-time messaging platform inspired by WhatsApp Web, designed to deliver seamless, secure, and synchronized communication across devices. Built with .NET Core (backend) and React.js (frontend), xPal empowers users to send messages, share media, and stay connected through a lightweight, browser-based interface that mirrors mobile app functionality.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/xPal%201.png?raw=true",
+      "/images/projects/xpal.webp",
     tags: [
       "React Js",
       "SQL Server",
@@ -280,52 +363,13 @@ export const projects = [
     webapp: "https://www.xpal.com/",
   },
   {
-    id: 4,
-    title: "RentUp",
-    date: "Jan 2022- mar 2022",
-    description:
-      "The application streamlines property discovery, detailed listing views, secure booking, and inquiry management while prioritizing user experience, security, and scalability. Whether users are searching for apartments, houses, or commercial spaces, RentUp simplifies the process of finding and securing the right property with intuitive search filters, clear visuals, and a smooth transaction flow.",
-    image:
-      "https://raw.githubusercontent.com/MusaZaidi110/All-Assests/refs/heads/main/Thumb-Nails/RentUp.png",
-    tags: ["React Js", "MySQL", "Node Js", "Express Js", "Redux"],
-    category: "Web App",
-    github: "",
-    webapp: "https://property-buying-selling.netlify.app/",
-  },
-  {
-    id: 5,
-    title: "Beach Resort",
-    date: "Apr 2022- Jun 2022",
-    description:
-      "The application simplifies destination discovery, room selection, booking management. Whether users are planning a family trip, a honeymoon, or a weekend getaway, It provides an intuitive interface with advanced filters, high-quality visuals, and a streamlined booking flow to ensure users can find and secure the perfect stay for their vacation.",
-    image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/beachresort.png?raw=true",
-    tags: ["React Js", "MySQL", "Node Js", "Express Js", "Redux"],
-    category: "Web App",
-    github: "",
-    webapp: "https://vacation-room-booking.netlify.app/",
-  },
-  {
-    id: 7,
-    title: "Vacation Planner",
-    date: "Jun 2022- Aug 2022",
-    description:
-      "Vacation Planner is a full-stack web application designed to help users seamlessly plan their vacations and book rooms in hotels or resorts with ease and confidence.",
-    image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/Hotelier.png?raw=true",
-    tags: ["React Js", "Redux"],
-    category: "Web App",
-    github: "",
-    webapp: "https://plan-vacation-withus.netlify.app/",
-  },
-  {
     id: 8,
     title: "Interactive Modern Interface",
     date: "Jun 2022- Aug 2022",
     description:
       "Interactive Interface with Modern Animation is a frontend-focused project showcasing clean, engaging user interfaces enriched with smooth, modern animations to enhance user experience.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/brainwave.png?raw=true",
+      "/images/projects/modern-interface.webp",
     tags: ["React Js", "Redux"],
     category: "Web App",
     github: "",
@@ -338,7 +382,7 @@ export const projects = [
     description:
       "The application features modern, interactive UI elements, dynamic animations, and responsive design, ensuring a smooth and visually appealing experience across devices.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/ecommerce-interface.png?raw=true",
+      "/images/projects/ecommerce-interface.webp",
     tags: ["React Js", "Redux"],
     category: "Web App",
     github: "",
@@ -351,7 +395,7 @@ export const projects = [
     description:
       "The application features real-time ride listings, location-based ride matching, interactive maps, and secure booking management to enhance the user experience while prioritizing security, scalability, and ease of use.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/7emirates.png?raw=true",
+      "/images/projects/7-emirates.webp",
     tags: ["HTML", "CSS", "JS"],
     category: "Web App",
     github: "",
@@ -364,7 +408,7 @@ export const projects = [
     description:
       "CoffeeHub is a modern, responsive web application designed for coffee enthusiasts and cafés to showcase, explore, and order premium coffee blends online.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/coffeelatay.png?raw=true",
+      "/images/projects/coffeelatay.webp",
     tags: ["HTML", "CSS", "JS"],
     category: "Web App",
     github: "",
@@ -377,23 +421,10 @@ export const projects = [
     description:
       "FreshCart is a modern, full-stack web application designed to deliver fresh vegetables and fruits directly to customers’ doorsteps.",
     image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/freshcart.png?raw=true",
+      "/images/projects/freshcart.webp",
     tags: ["HTML", "CSS", "JS"],
     category: "Web App",
     github: "",
     webapp: "https://getfood-byus.netlify.app/",
-  },
-  {
-    id: 11,
-    title: "RealEstate",
-    date: "Jun 2023 - Sep 2023",
-    description:
-      "RealEstate Hub is a full-stack web application designed to simplify property discovery, buying, and renting for users while enabling agents and property owners to efficiently manage their listings.",
-    image:
-      "https://github.com/MusaZaidi110/All-Assests/blob/main/Thumb-Nails/realestate.png?raw=true",
-    tags: ["HTML", "CSS", "JS"],
-    category: "Web App",
-    github: "",
-    webapp: "https://realestate-builder.netlify.app/",
   },
 ];

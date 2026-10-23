@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { skills } from "../../data/constants";
-import { Tilt } from "react-tilt";
+import Tilt from "react-parallax-tilt";
 
 const Container = styled.div`
   display: flex;
@@ -131,13 +131,13 @@ const Skills = () => {
 
         <SkillsContainer>
           {skills.map((skill, index) => (
-            <Tilt>
-              <Skill key={`skill-${index}`}>
+            <Tilt key={`skill-${index}`}>
+              <Skill>
                 <SkillTitle>{skill.title}</SkillTitle>
                 <SkillList>
                   {skill.skills.map((item, index_x) => (
                     <SkillItem key={`skill-x-${index_x}`}>
-                      <SkillImage src={item.image} />
+                      <SkillImage src={item.image} alt={item.name} width="24" height="24" loading="lazy" />
                       {item.name}
                     </SkillItem>
                   ))}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link as LinkR } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
 import { Bio } from "../data/constants";
-import { MenuRounded } from "@mui/icons-material";
+import { MdMenu } from "react-icons/md";
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -135,7 +135,7 @@ const Navbar = () => {
         <NavLogo to="/">MusaZaidi</NavLogo>
 
         <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-          <MenuRounded style={{ color: "inherit" }} />
+          <MdMenu size={28} style={{ color: "inherit" }} />
         </MobileIcon>
 
         <NavItems>

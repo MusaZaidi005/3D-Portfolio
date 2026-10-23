@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
-import {
-  FacebookRounded,
-  Instagram,
-  LinkedIn,
-  Twitter,
-} from "@mui/icons-material";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -94,16 +89,16 @@ const Footer = () => {
         </Nav>
         <SocialMediaIcons>
           <SocialMediaIcon href={Bio.facebook} target="display">
-            <FacebookRounded />
+            <FaFacebook />
           </SocialMediaIcon>
           <SocialMediaIcon href={Bio.twitter} target="display">
-            <Twitter />
+            <FaTwitter />
           </SocialMediaIcon>
           <SocialMediaIcon href={Bio.linkedin} target="display">
-            <LinkedIn />
+            <FaLinkedin />
           </SocialMediaIcon>
           <SocialMediaIcon href={Bio.insta} target="display">
-            <Instagram />
+            <FaInstagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
         <Copyright>&copy; 2025 Musa Raza Zaidi. All rights reserved.</Copyright>

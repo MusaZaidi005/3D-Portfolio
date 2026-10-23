@@ -3,13 +3,14 @@ import { darkTheme } from "./utils/Themes";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/sections/Hero";
-import Skills from "./components/sections/Skills";
-import Experience from "./components/sections/Experience";
-import Education from "./components/sections/Education";
-import StartCanvas from "./components/canvas/Stars";
-import Projects from "./components/sections/Projects";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/sections/Footer";
+import LazySection from "./components/LazySection";
+
+const loadSkills = () => import("./components/sections/Skills");
+const loadExperience = () => import("./components/sections/Experience");
+const loadProjects = () => import("./components/sections/Projects");
+const loadEducation = () => import("./components/sections/Education");
+const loadContact = () => import("./components/sections/Contact");
+const loadFooter = () => import("./components/sections/Footer");
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -39,20 +40,19 @@ function App() {
     <ThemeProvider theme={darkTheme}>
       <BrowserRouter>
       <Navbar />
-        <Body>
-          <StartCanvas />
+        <Body as="main">
           <div>
             <Hero />
             <Wrapper>
-              <Skills />
-              <Experience />
+              <LazySection load={loadSkills} id="Skills" />
+              <LazySection load={loadExperience} id="Experience" />
             </Wrapper>
-            <Projects />
+            <LazySection load={loadProjects} id="Projects" />
             <Wrapper>
-              <Education />
-              <Contact />
+              <LazySection load={loadEducation} id="Education" />
+              <LazySection load={loadContact} id="Contact" />
             </Wrapper>
-            <Footer />
+            <LazySection load={loadFooter} minHeight={200} />
           </div>
         </Body>
       </BrowserRouter>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: 330px;
-  height: 430px;
+  min-height: 430px;
   background-color: ${({ theme }) => theme.card};
   cursor: pointer;
   border-radius: 10px;
@@ -22,18 +22,12 @@ const Card = styled.div`
 `;
 const Image = styled.img`
   width: 100%;
-  height: 180px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   background-color: ${({ theme }) => theme.white};
   border-radius: 10px;
   box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
-`;
-const Tags = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
 `;
 const Details = styled.div`
   width: 100%;
@@ -84,16 +78,25 @@ const Button = styled.a`
 const ProjectCard = ({ project }) => {
   return (
     <Card>
-      <Image src={project.image} />
-      <Tags></Tags>
+      <Image
+        src={project.image}
+        alt={`${project.title} project thumbnail`}
+        width="800"
+        height="450"
+        loading="lazy"
+        decoding="async"
+      />
       <Details>
         <Title>{project.title}</Title>
         <Date>{project.date}</Date>
         <Description>{project.description}</Description>
       </Details>
-      <Button href={project.webapp} target="_blank">
-        View Site
-      </Button>
+      {!project.webapp && <Button as="span">Private project</Button>}
+      {project.webapp && (
+        <Button href={project.webapp} target="_blank" rel="noopener noreferrer">
+          View Site
+        </Button>
+      )}
     </Card>
   );
 };

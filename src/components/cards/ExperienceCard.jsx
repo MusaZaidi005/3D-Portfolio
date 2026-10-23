@@ -112,7 +112,7 @@ const ExperienceCard = ({ experience }) => {
       date={experience?.date}
     >
       <Top>
-        <Image src={experience?.img} width={"120px"} />
+        <Image src={experience?.img} width={"120px"} alt={experience?.company || "Company logo"} loading="lazy" />
         <Body>
           <Role>{experience?.role}</Role>
           <Company>{experience?.company}</Company>
@@ -128,7 +128,7 @@ const ExperienceCard = ({ experience }) => {
               <b>Skills</b>
               <ItemWrapper>
                 {experience?.skills?.map((skill, index) => (
-                  <Skill>• {skill}</Skill>
+                  <Skill key={`${skill}-${index}`}>• {skill}</Skill>
                 ))}
               </ItemWrapper>
             </Skills>

@@ -109,16 +109,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data",form.current);
     emailjs
       .sendForm(
         "service_0s0wp4e", 
         "template_6pif568",
         form.current,
-        "D6vrnBWAL0OgyKIZo"
+        { publicKey: "D6vrnBWAL0OgyKIZo" }
       )
       .then(
-        (result) => {
+        () => {
           alert("Message Sent");
           form.current.reset();
         },
@@ -129,7 +128,7 @@ const Contact = () => {
   };
 
   return (
-    <Container id="Education">
+    <Container id="Contact">
       <Wrapper>
         <Title>Contact</Title>
         <Desc

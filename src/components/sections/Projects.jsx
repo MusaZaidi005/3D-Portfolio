@@ -6,10 +6,10 @@ import ProjectCard from "../cards/ProjectCard";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-contnet: center;
+  justify-content: center;
   margin-top: 50px;
   padding: 0px 16px;
-  position: rlative;
+  position: relative;
   z-index: 1;
   align-items: center;
 `;
@@ -57,6 +57,27 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+
+// "Dec 2024 - Feb 2025", "JUNE 2023 – FEB 2024", "2026 - Present", "2025" -> [start, end] as sortable numbers
+const parsePart = (part) => {
+  if (/present/i.test(part)) return Infinity;
+  const year = Number((part.match(/\d{4}/) || [0])[0]);
+  const month = MONTHS.indexOf(part.trim().slice(0, 3).toLowerCase());
+  return year * 12 + Math.max(month, 0);
+};
+const parseRange = (date) => {
+  const [start, end = start] = date.split(/\s*[-–]\s*/);
+  return [parsePart(start), parsePart(end)];
+};
+
+// Newest first: by end date, then start date.
+const sortedProjects = [...projects].sort((a, b) => {
+  const [aStart, aEnd] = parseRange(a.date);
+  const [bStart, bEnd] = parseRange(b.date);
+  return bEnd - aEnd || bStart - aStart;
+});
+
 const Projects = () => {
   return (
     <Container id="Projects">
@@ -72,9 +93,9 @@ const Projects = () => {
         </Desc>
 
         <CardContainer>
-          {projects
+          {sortedProjects
             .map((project) => (
-              <ProjectCard project={project} />
+              <ProjectCard key={project.id} project={project} />
             ))}
         </CardContainer>
       </Wrapper>

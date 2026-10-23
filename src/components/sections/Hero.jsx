@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import Typewriter from "typewriter-effect";
@@ -9,7 +9,22 @@ import {
   headContentAnimation,
   headTextAnimation,
 } from "../../utils/motion";
-import StarCanvas from "../canvas/Stars";
+const StarCanvas = lazy(() => import("../canvas/Stars"));
+
+// Decorative star field: mount only after first paint, when the browser is idle.
+const useIdle = (timeout = 2500) => {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const run = () => setReady(true);
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(run, { timeout });
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = setTimeout(run, timeout);
+    return () => clearTimeout(id);
+  }, [timeout]);
+  return ready;
+};
 
 const HeroContainer = styled.div`
   display: flex;
@@ -182,11 +197,15 @@ const HeroBg = styled.div`
 `;
 
 const Hero = () => {
-  return (
+  const showStars = useIdle();  return (
     <div id="About">
       <HeroContainer>
         <HeroBg>
-          <StarCanvas />
+          {showStars && (
+            <Suspense fallback={null}>
+              <StarCanvas />
+            </Suspense>
+          )}
           <HeroBgAnimation />
         </HeroBg>
 
